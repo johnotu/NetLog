@@ -1,0 +1,85 @@
+extends layout
+
+block content
+	.header
+		img.img-responsive.center-block(src='images/ecnlogo.png', height='10%', width='20%')
+		h1.leadin Energy Commission of Nigeria
+		h3.leadin Network Maintenance Activity Logger
+
+	.upper
+		#addLog
+			h3.section-head Log An Activity
+			form.form-inline
+				.form-group
+					label(for='inputReporter') Reported by
+					input#inputReporter.form-control(type='text')
+				.form-group
+					label(for='inputOffice') Office
+					input#inputOffice.form-control(type='text')
+				.form-group
+					label(for='inputFloor') Floor
+						select#inputFloor.form-control
+							option(value='1') 1
+							option(value='2') 2
+							option(value='3') 3
+							option(value='4') 4
+
+			form.form-inline
+				.form-group
+					label(for='inputDevicetype') Device type
+						select#inputDevicetype.form-control
+							option(value='PC') PC
+							option(value='Switch') Switch
+							option(value='Router') Router
+				.form-group
+					label(for='inputDevicename') Device name
+					input#inputDevicename.form-control(type='text')
+				.form-group
+					label(for='inputDeviceid') Device ID or MAC address
+					input#inputDeviceid.form-control(type='text')
+
+			form
+				.form-group
+					label(for='inputComplaint') Description of reported issue(s)
+					textarea#inputComplaint.form-control(rows='5')
+			form.form-inline
+				.form-group
+					label(for='inputLogcreatedby') Issue treated by
+					input#inputLogcreatedby.form-control(type='text')
+				.form-group
+					label(for='inputJobstatus') Job status
+						select#inputJobstatus.form-control
+							option(value='Pending') Pending
+							option(value='Done') Done
+
+			form
+				.form-group
+					label(for='inputWorkdone') Description of work done
+					textarea#inputWorkdone.form-control(rows='5')
+			button#btnAddLog.btn.btn-success.btn-lg(type='submit') Log
+
+	.lower
+		#logList
+			.container
+				.row
+					h3.section-head#lefthead Log List
+					a#btnPrintLog.btn.btn-success(role='button', href='javascript:window.print()') Print
+			.table-responsive
+				table.table.table-condensed.table-bordered
+					thead.active
+						tr
+							th Date
+							th Reported by
+							th Office
+							th Floor
+							th Device type
+							th Device name
+							th Device ID (or MAC address)
+							th Issue description
+							th Treated by
+							th Description of work done
+							th Status
+					tbody#logtable
+
+		
+
