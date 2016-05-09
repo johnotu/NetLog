@@ -17,7 +17,7 @@ block content
 					label(for='inputOffice') Office
 					input#inputOffice.form-control(type='text')
 				.form-group
-					label(for='inputFloor') Floor
+					label(for='inputFloor') Floor 
 						select#inputFloor.form-control
 							option(value='') pick floor
 							option(value='1') 1
@@ -27,7 +27,7 @@ block content
 
 			form.form-inline
 				.form-group
-					label(for='inputDevicetype') Device type
+					label(for='inputDevicetype') Device type 
 						select#inputDevicetype.form-control
 							option(value='') Choose type of device
 							option(value='PC') PC
@@ -50,7 +50,7 @@ block content
 					label(for='inputLogcreatedby') Issue treated by
 					input#inputLogcreatedby.form-control(type='text')
 				.form-group
-					label(for='inputJobstatus') Job status
+					label(for='inputJobstatus') Job status 
 						select#inputJobstatus.form-control
 							option(value='') Job status
 							option(value='Pending') Pending
@@ -66,8 +66,23 @@ block content
 		#logList
 			.container
 				.row
-					h3.section-head#lefthead Log List
-					a#btnPrintLog.btn.btn-success(role='button', href='javascript:window.print()') Print
+					.col-md-2
+						h3.section-head#lefthead Log List
+					.col-md-8.form-inline
+						label(for='searchCat') Search Log 
+							select#searchCat.form-control
+								option(value='') Search by category...
+								option(value='reporter') Reported by
+								option(value='office') Office
+								option(value='floor') Floor
+								option(value='devicetype') Device type
+								option(value='deviceid') Device ID (or MAC adrress)
+								option(value='logcreatedby') Treated by
+								option(value='jobstatus') Status
+						input.form-control(typeption='text', placeholder='Search item')
+						button.btn.btn-success(type='submit') Search
+					.col-md-2
+						a#btnPrintLog.btn.btn-success(role='button', href='javascript:window.print()') Print
 			.table-responsive
 				table.table.table-condensed.table-bordered
 					thead.active
