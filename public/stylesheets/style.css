@@ -76,12 +76,7 @@ label, .option {
 	margin-right: 20px;
 	margin-bottom: 10px
 }
-#btnPrintLog {
-	float: right;
-}
-#lefthead {
-	float: left;
-}
+
 
 @media print {
   body {
