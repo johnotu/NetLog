@@ -19,6 +19,7 @@ block content
 				.form-group
 					label(for='inputFloor') Floor
 						select#inputFloor.form-control
+							option(value='') pick floor
 							option(value='1') 1
 							option(value='2') 2
 							option(value='3') 3
@@ -28,7 +29,9 @@ block content
 				.form-group
 					label(for='inputDevicetype') Device type
 						select#inputDevicetype.form-control
+							option(value='') Choose type of device
 							option(value='PC') PC
+							option(value='AP') Access Point
 							option(value='Switch') Switch
 							option(value='Router') Router
 				.form-group
@@ -49,6 +52,7 @@ block content
 				.form-group
 					label(for='inputJobstatus') Job status
 						select#inputJobstatus.form-control
+							option(value='') Job status
 							option(value='Pending') Pending
 							option(value='Done') Done
 
