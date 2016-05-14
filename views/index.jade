@@ -79,8 +79,37 @@ block content
 								option(value='deviceid') Device ID (or MAC adrress)
 								option(value='logcreatedby') Treated by
 								option(value='jobstatus') Status
-						input.form-control(typeption='text', placeholder='Search item')
-						button.btn.btn-success(type='submit') Search
+						input#searchItem.form-control(typeption='text', placeholder='Search item')
+						button#btnSearchLog.btn.btn-success(type='button', data-toggle='modal', data-target='#searchModal') Search
+
+						.modal.fade#searchModal(tabindex='-1', role='dialog')
+							.modal-dialog(role='document')
+								.modal-content
+									.modal-header
+										button.close(type='button', data-dismiss='modal')
+										h4.modal-title Modal title
+									.modal-body
+										.table-responsive
+											table.table.table-condensed.table-bordered
+												thead.active
+													tr
+														th Date
+														th Reported by
+														th Office
+														th Floor
+														th Device type
+														th Device name
+														th Device ID (or MAC address)
+														th Issue description
+														th Treated by
+														th Description of work done
+														th Status
+												tbody#searchtable
+									.modal-footer
+										button.btn.btn-default(type='button', data-dismiss='modal') Close
+										button.btn.btn-primary(type='button') Save changes
+
+
 					.col-md-2
 						a#btnPrintLog.btn.btn-success(role='button', href='javascript:window.print()') Print
 			.table-responsive
