@@ -144,6 +144,4 @@ function addSearch(ar){
 			searchListData.push(ar[i]);
 		}
 	}
-
-		
 }
